@@ -3,6 +3,7 @@ import { Router, Location } from "@reach/router";
 import posed, { PoseGroup } from "react-pose";
 import Home from "./pages/Home";
 import Tools from "./pages/Tools";
+import Contact from "./pages/Contact";
 
 const RouteContainer = posed.div({
   enter: { opacity: 1, delay: 300, beforeChildren: 300 },
@@ -26,6 +27,7 @@ class App extends Component {
       <PosedRouter>
         <Home path="/" />
         <Tools path="tools" />
+        <Contact path="contact-me" />
       </PosedRouter>
     );
   }

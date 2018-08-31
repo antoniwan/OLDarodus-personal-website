@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from "@reach/router";
 import posed from "react-pose";
 import styled from "react-emotion";
-import image1 from "../assets/images/test-1.jpg";
-import image2 from "../assets/images/test-2.jpg";
-import image3 from "../assets/images/test-3.jpg";
 import { svgBG } from "../utils/misc";
 
 const PosedMain = posed.div({
@@ -15,17 +12,14 @@ const textAnimationProps = {
   enter: { x: 0, opacity: 1 },
   exit: { x: 50, opacity: 0 }
 };
-const imageAnimationProps = {
+const PosedExtraBlock = posed.div({
   enter: {
     x: 0
   },
-  exit: {
-    x: "-100%"
-  }
-};
+  exit: { x: "-100%" }
+});
 const P = posed.p(textAnimationProps);
 const H1 = posed.h1(textAnimationProps);
-const IMG = posed.img(imageAnimationProps);
 
 const StyledMain = styled(PosedMain)`
   display: flex;
@@ -50,7 +44,7 @@ const StyledMain = styled(PosedMain)`
       padding: 4rem;
       justify-content: center;
       order: 2;
-      flex: 0.4;
+      flex: 0.7;
     }
   }
 
@@ -67,7 +61,7 @@ const StyledMain = styled(PosedMain)`
     @media(min-width: 850px) {
       display: flex;
       order: 1;
-      flex: 0.6;
+      flex: 0.2;
     }
   }
 
@@ -80,14 +74,10 @@ const StyledMain = styled(PosedMain)`
 
 `;
 
-const Home = () => {
+const Contact = () => {
   return (
     <StyledMain>
-      <div className="imagery">
-        <IMG src={image1} alt="Text 1" />
-        <IMG src={image2} alt="Text 2" />
-        <IMG src={image3} alt="Text 3" />
-      </div>
+      <PosedExtraBlock className="imagery" />
 
       <div className="content">
         <H1>Lorem!</H1>
@@ -129,4 +119,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Contact;
