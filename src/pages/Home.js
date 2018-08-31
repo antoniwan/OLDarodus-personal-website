@@ -14,14 +14,23 @@ const textAnimationProps = {
   enter: { x: 0, opacity: 1 },
   exit: { x: 50, opacity: 0 }
 };
+const imageAnimationProps = {
+  enter: {
+    x: 0
+  },
+  exit: {
+    x: "-100%"
+  }
+};
 const P = posed.p(textAnimationProps);
 const H1 = posed.h1(textAnimationProps);
+const IMG = posed.img(imageAnimationProps);
 
 const StyledMain = styled(PosedMain)`
   display: flex;
   flex-direction: column;
 
-  @media(min-width: 700px) {
+  @media(min-width: 850px) {
     height: 100vh;
     flex-direction: row;
   }
@@ -37,7 +46,7 @@ const StyledMain = styled(PosedMain)`
     padding: 2rem;
     max-width: 500px;
 
-    @media(min-width: 700px) {
+    @media(min-width: 850px) {
       padding: 4rem;
       justify-content: center;
       order: 2;
@@ -46,29 +55,26 @@ const StyledMain = styled(PosedMain)`
   }
 
   .imagery {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     order: 2;
     background-color: #ffffff;
     background-image: url("${svgBG}");
-    overflow: hidden;
 
-    @media(min-width: 700px) {
+    @media(min-width: 850px) {
+      display: flex;
       order: 1;
       flex: 0.6;
     }
   }
 
-  .item {
-    background: red;
+  img {
     max-width: 500px;
     max-height: 500px;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
-
-  .image-wrapper img {
-    width: 200px;
-  }
-
 
 `;
 
@@ -76,15 +82,9 @@ const Home = () => {
   return (
     <StyledMain>
       <div className="imagery">
-        <div className="item item-1">
-          <img src={image1} alt="Text 1" />
-        </div>
-        <div className="item item-2">
-          <img src={image2} alt="Text 2" />
-        </div>
-        <div className="item item-3">
-          <img src={image3} alt="Text 3" />
-        </div>
+        <IMG src={image1} alt="Text 1" />
+        <IMG src={image2} alt="Text 2" />
+        <IMG src={image3} alt="Text 3" />
       </div>
 
       <div className="content">
