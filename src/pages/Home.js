@@ -8,7 +8,8 @@ import image3 from "../assets/images/test-3.jpg";
 import { svgBG } from "../utils/misc";
 
 const PosedMain = posed.div({
-  enter: { staggerChildren: 50 }
+  enter: { staggerChildren: 50 },
+  exit: { staggerChildren: 50 }
 });
 const textAnimationProps = {
   enter: { x: 0, opacity: 1 },
@@ -36,13 +37,13 @@ const StyledMain = styled(PosedMain)`
   }
 
   .content {
+    border-left: 0.1px solid #eee;
     display: flex;
     flex-direction: column;
     flex: 1;
     justify-content: flex-start;
     align-items: flex-start;
     order: 1;
-    /*justify-content: center;*/
     padding: 2rem;
     max-width: 500px;
 
@@ -61,6 +62,7 @@ const StyledMain = styled(PosedMain)`
     order: 2;
     background-color: #ffffff;
     background-image: url("${svgBG}");
+    overflow: hidden;
 
     @media(min-width: 850px) {
       display: flex;
