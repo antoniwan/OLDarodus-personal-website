@@ -1,5 +1,35 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Karma:400,700|Raleway:900");
+
+:root {
+  --color-black: #333;
+}
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-family: "Karma", serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 3rem;
+  margin-bottom: 10px;
+  color: var(--color-black);
+}
+
+p {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--color-black);
 }
