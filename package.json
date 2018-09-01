@@ -9,6 +9,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-emotion": "^9.2.8",
+    "react-helmet": "^5.2.0",
     "react-pose": "^3.2.0",
     "react-scripts": "1.1.5"
   },
