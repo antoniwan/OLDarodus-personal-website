@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.1.1",
+    "axios": "^0.18.0",
     "babel-plugin-emotion": "^9.2.8",
     "emotion": "^9.2.8",
+    "lodash": "^4.17.11",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-emotion": "^9.2.8",
