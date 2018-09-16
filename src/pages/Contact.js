@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "@reach/router";
 import posed from "react-pose";
 import styled from "react-emotion";
 import Helmet from "react-helmet";
@@ -27,10 +26,12 @@ const H1 = posed.h1(textAnimationProps);
 const StyledMain = styled(PosedMain)`
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
 
   @media(min-width: 850px) {
     height: 100vh;
     flex-direction: row;
+    padding-top: 0;
   }
 
   .content {
@@ -79,70 +80,72 @@ const StyledMain = styled(PosedMain)`
 
 const Contact = () => {
   return (
-    <StyledMain>
+    <React.Fragment>
       <Navigation />
-      <Helmet
-        title="Antonio Rodriguez"
-        meta={[
-          {
-            name: "description",
-            content:
-              "Software engineer living in Miami, Florida. Knows what he's doing 60% the time. Will work for food."
-          }
-        ]}
-      />
-      <PosedExtraBlock className="imagery" />
-
-      <div className="content">
+      <StyledMain>
         <Helmet
-          title="Contacting Antonio Rodriguez"
+          title="Antonio Rodriguez"
           meta={[
             {
               name: "description",
               content:
-                "Don't be shy! I'm open to mentoring, code reviews, projects or just casual conversation."
+                "Software engineer living in Miami, Florida. Knows what he's doing 60% the time. Will work for food."
             }
           ]}
         />
-        <H1>Contact Me</H1>
+        <PosedExtraBlock className="imagery" />
 
-        <P>
-          Write me at{" "}
-          <a
-            href="mailto:antoniwan+arodus@gmail.com?subject=Hey, Antonio!"
-            title="Email Antonio Rodriguez"
-          >
-            antoniwan@gmail.com
-          </a>{" "}
-          or check out my social media links below. I'm fairly active in{" "}
-          <a
-            href="https://twitter.com/antoniwan"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Twitter
-          </a>
-          ! After you follow me, check out some sweet{" "}
-          <a
-            href="https://open.spotify.com/user/antoniwan/playlist/18Fchy5u9YkOvUqtAKqMj1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            classical
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://open.spotify.com/user/antoniwan/playlist/7gqDk94DAF0O5ifBuKAlVH"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            salsa
-          </a>{" "}
-          playlists I created for you. Cheers!
-        </P>
-        <Social />
-      </div>
-    </StyledMain>
+        <div className="content">
+          <Helmet
+            title="Contacting Antonio Rodriguez"
+            meta={[
+              {
+                name: "description",
+                content:
+                  "Don't be shy! I'm open to mentoring, code reviews, projects or just casual conversation."
+              }
+            ]}
+          />
+          <H1>Contact Me</H1>
+
+          <P>
+            Write me at{" "}
+            <a
+              href="mailto:antoniwan+arodus@gmail.com?subject=Hey, Antonio!"
+              title="Email Antonio Rodriguez"
+            >
+              antoniwan@gmail.com
+            </a>{" "}
+            or check out my social media links below. I'm fairly active in{" "}
+            <a
+              href="https://twitter.com/antoniwan"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Twitter
+            </a>
+            ! After you follow me, check out some sweet{" "}
+            <a
+              href="https://open.spotify.com/user/antoniwan/playlist/18Fchy5u9YkOvUqtAKqMj1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              classical
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://open.spotify.com/user/antoniwan/playlist/7gqDk94DAF0O5ifBuKAlVH"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              salsa
+            </a>{" "}
+            playlists I created for you. Cheers!
+          </P>
+          <Social />
+        </div>
+      </StyledMain>
+    </React.Fragment>
   );
 };
 

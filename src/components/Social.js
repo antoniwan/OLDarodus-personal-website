@@ -36,12 +36,16 @@ const SocialGrid = styled(PosedSocialGrid)`
       font-size: 16px;
       padding: 0.5rem;
       transition: 0.6s all;
+      color: var(--color-black);
       span {
         margin-left: 10px;
       }
       &:hover {
-        color: var(--color-black);
+        color: var(--color-link);
       }
+    }
+    a:before {
+      display: none;
     }
   }
 `;

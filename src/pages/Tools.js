@@ -28,9 +28,11 @@ const H1 = posed.h1(textAnimationProps);
 const StyledMain = styled(PosedMain)`
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
 
   @media(min-width: 850px) {
     flex-direction: row;
+    padding-top: 0;
   }
 
   .content {
@@ -78,18 +80,20 @@ const StyledMain = styled(PosedMain)`
 
 const Tools = () => {
   return (
-    <StyledMain>
+    <React.Fragment>
       <Navigation />
-      <PosedExtraBlock className="imagery" />
+      <StyledMain>
+        <PosedExtraBlock className="imagery" />
 
-      <div className="content">
-        <H1>Tools</H1>
+        <div className="content">
+          <H1>Tools</H1>
 
-        <PosedToolbox>
-          <Toolbox />
-        </PosedToolbox>
-      </div>
-    </StyledMain>
+          <PosedToolbox>
+            <Toolbox />
+          </PosedToolbox>
+        </div>
+      </StyledMain>
+    </React.Fragment>
   );
 };
 

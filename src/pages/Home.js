@@ -3,9 +3,8 @@ import { Link } from "@reach/router";
 import posed from "react-pose";
 import styled from "react-emotion";
 import Helmet from "react-helmet";
-import image5 from "../assets/images/ginoandme.jpg";
+import image5 from "../assets/images/m8headshot.jpg";
 import { svgBG } from "../utils/misc";
-import Navigation from "../components/Navigation";
 
 const PosedMain = posed.div({
   enter: { staggerChildren: 50 },
@@ -70,10 +69,9 @@ const StyledMain = styled(PosedMain)`
 
   img {
     max-width: 300px;
-    max-height: 300px;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 50px 0;
     border-radius: 5px;
     margin: 5px;
   }
@@ -86,7 +84,6 @@ const StyledMain = styled(PosedMain)`
 const Home = () => {
   return (
     <StyledMain>
-      <Navigation />
       <div className="imagery">
         <IMG src={image5} alt="Text 5" />
       </div>
@@ -102,7 +99,7 @@ const Home = () => {
             }
           ]}
         />
-        <H1>Software Engineer. Manager. Father. Husband.</H1>
+        <H1>Software Engineer. Manager. Husband. Father.</H1>
 
         <P>
           My name is Antonio Rodríguez and I lead software development for a{" "}
