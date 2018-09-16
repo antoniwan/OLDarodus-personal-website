@@ -154,12 +154,9 @@ class NotFound extends Component {
           <PosedExtraBlock className="imagery" />
 
           <div className="content">
-            <H1 />
+            <H1>404</H1>
 
-            <P>
-              You just hit a route that doesn&#39;t exist. Here's a random
-              Giphy.
-            </P>
+            <P>You just hit a route that doesn&#39;t exist.</P>
 
             {gif && (
               <img
@@ -169,9 +166,6 @@ class NotFound extends Component {
               />
             )}
             {!gif && <StyledLoading>Loading...</StyledLoading>}
-            <P>
-              <small>Click on the Giphy for another one!</small>
-            </P>
           </div>
         </StyledMain>
       </React.Fragment>
