@@ -140,12 +140,11 @@ class NotFound extends Component {
     return (
       <React.Fragment>
         <Helmet
-          title="Contacting Antonio Rodriguez"
+          title="404"
           meta={[
             {
               name: "description",
-              content:
-                "Don't be shy! I'm open to mentoring, code reviews, projects or just casual conversation."
+              content: "What's going on? Is this... is this is?!"
             }
           ]}
         />
