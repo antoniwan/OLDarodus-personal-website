@@ -1,5 +1,6 @@
 import React from "react";
 import posed from "react-pose";
+import Helmet from "react-helmet";
 import styled from "react-emotion";
 import { svgBG } from "../utils/misc";
 import Toolbox from "../components/Toolbox";
@@ -81,6 +82,16 @@ const StyledMain = styled(PosedMain)`
 const Tools = () => {
   return (
     <React.Fragment>
+      <Helmet
+        title="Skills to pay the bills | Antonio Rodriguez"
+        meta={[
+          {
+            name: "description",
+            content:
+              "These are my tools of the trade. No technology is safe! 😂."
+          }
+        ]}
+      />
       <Navigation />
       <StyledMain>
         <PosedExtraBlock className="imagery" />

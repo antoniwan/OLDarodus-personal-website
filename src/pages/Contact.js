@@ -81,31 +81,21 @@ const StyledMain = styled(PosedMain)`
 const Contact = () => {
   return (
     <React.Fragment>
+      <Helmet
+        title="Contacting Antonio Rodriguez"
+        meta={[
+          {
+            name: "description",
+            content:
+              "Don't be shy! I'm open to mentoring, code reviews, projects or just casual conversation."
+          }
+        ]}
+      />
       <Navigation />
       <StyledMain>
-        <Helmet
-          title="Antonio Rodriguez"
-          meta={[
-            {
-              name: "description",
-              content:
-                "Software engineer living in Miami, Florida. Knows what he's doing 60% the time. Will work for food."
-            }
-          ]}
-        />
         <PosedExtraBlock className="imagery" />
 
         <div className="content">
-          <Helmet
-            title="Contacting Antonio Rodriguez"
-            meta={[
-              {
-                name: "description",
-                content:
-                  "Don't be shy! I'm open to mentoring, code reviews, projects or just casual conversation."
-              }
-            ]}
-          />
           <H1>Contact Me</H1>
 
           <P>
@@ -124,7 +114,7 @@ const Contact = () => {
             >
               Twitter
             </a>
-            ! After you follow me, check out some sweet{" "}
+            ! After you follow me, check out the sick{" "}
             <a
               href="https://open.spotify.com/user/antoniwan/playlist/18Fchy5u9YkOvUqtAKqMj1"
               target="_blank"
