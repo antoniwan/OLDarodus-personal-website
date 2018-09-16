@@ -2,27 +2,21 @@ import React from "react";
 import { Link } from "@reach/router";
 import posed from "react-pose";
 import styled from "react-emotion";
-import image1 from "../assets/images/test-1.jpg";
-import image2 from "../assets/images/test-2.jpg";
-import image3 from "../assets/images/test-3.jpg";
+import Helmet from "react-helmet";
+import image5 from "../assets/images/ginoandme.jpg";
 import { svgBG } from "../utils/misc";
+import Navigation from "../components/Navigation";
 
 const PosedMain = posed.div({
   enter: { staggerChildren: 50 },
   exit: { staggerChildren: 50 }
 });
+// Remember to animate the imagery panel on enter!
 const textAnimationProps = {
   enter: { x: 0, opacity: 1 },
   exit: { x: 50, opacity: 0 }
 };
-const imageAnimationProps = {
-  enter: {
-    x: 0
-  },
-  exit: {
-    x: "-100%"
-  }
-};
+const imageAnimationProps = {};
 const P = posed.p(textAnimationProps);
 const H1 = posed.h1(textAnimationProps);
 const IMG = posed.img(imageAnimationProps);
@@ -57,11 +51,14 @@ const StyledMain = styled(PosedMain)`
   .imagery {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
     flex: 1;
     order: 2;
     background-color: #ffffff;
     background-image: url("${svgBG}");
-    border-right: 0.1px solid #eee;
+    border-right: 1px solid var(--color-light_gray);
     overflow: hidden;
 
     @media(min-width: 850px) {
@@ -72,58 +69,73 @@ const StyledMain = styled(PosedMain)`
   }
 
   img {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
     margin: 0;
     padding: 0;
+    border-radius: 5px;
+    margin: 5px;
   }
 
 `;
 
+/* Add 2 top tweets using the Twitter API */
+/* Add 1 Instagram post (dunno if they have an open API) */
+/* Have it look like an atom, "my composition as a person" */
 const Home = () => {
   return (
     <StyledMain>
+      <Navigation />
       <div className="imagery">
-        <IMG src={image1} alt="Text 1" />
-        <IMG src={image2} alt="Text 2" />
-        <IMG src={image3} alt="Text 3" />
+        <IMG src={image5} alt="Text 5" />
       </div>
 
       <div className="content">
-        <H1>Lorem!</H1>
+        <Helmet
+          title="Antonio Rodriguez"
+          meta={[
+            {
+              name: "description",
+              content:
+                "Software engineer living in Miami, Florida. Knows what he's doing 60% the time. Will work for food."
+            }
+          ]}
+        />
+        <H1>Software Engineer. Manager. Father. Husband.</H1>
 
         <P>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit
-          amet leo id ligula commodo efficitur ac quis nunc. Nullam auctor, diam
-          eu suscipit consequat, lorem nibh maximus orci, non venenatis ex massa
-          sed neque. Nulla laoreet orci ac ante vehicula commodo. Integer
-          suscipit justo quis convallis euismod.
+          My name is Antonio Rodríguez and I lead software development for a{" "}
+          <a
+            href="https://m8agency.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            marketing agency
+          </a>{" "}
+          in Miami, Florida. I absolutely enjoy learning and working with{" "}
+          <Link to="/tools">web technologies</Link>; we have the best job in the
+          world!
         </P>
 
         <P>
-          Praesent semper ac urna quis pellentesque. Orci varius natoque
-          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Away from the screen, I like playing{" "}
+          <a
+            href="https://www.instagram.com/stories/highlights/17908582195073038/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            guitar
+          </a>
+          , basketball, eating lots of food and spending time with my family.
         </P>
 
         <P>
-          In blandit risus sed nibh auctor, a vulputate eros iaculis. Nunc a
-          rhoncus elit, ut tincidunt tortor. Fusce ac placerat magna, vel mollis
-          lorem.
+          Please do <Link to="/contact-me"> contact </Link> me! I'm open to
+          mentoring, code reviews, projects or just casual conversation.
         </P>
 
-        <P>Suspendisse potenti.</P>
-
-        <ul id="site-nav">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/tools">Tools</Link>
-          </li>
-          <li>
-            <Link to="/contact-me">Contact</Link>
-          </li>
-        </ul>
+        <P>Thanks for visiting!</P>
       </div>
     </StyledMain>
   );

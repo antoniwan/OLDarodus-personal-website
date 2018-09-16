@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from "@reach/router";
 import posed from "react-pose";
 import styled from "react-emotion";
+import Helmet from "react-helmet";
 import { svgBG } from "../utils/misc";
+import Social from "../components/Social";
+import Navigation from "../components/Navigation";
 
 const PosedMain = posed.div({
   enter: { staggerChildren: 50 },
@@ -77,43 +80,67 @@ const StyledMain = styled(PosedMain)`
 const Contact = () => {
   return (
     <StyledMain>
+      <Navigation />
+      <Helmet
+        title="Antonio Rodriguez"
+        meta={[
+          {
+            name: "description",
+            content:
+              "Software engineer living in Miami, Florida. Knows what he's doing 60% the time. Will work for food."
+          }
+        ]}
+      />
       <PosedExtraBlock className="imagery" />
 
       <div className="content">
-        <H1>Lorem!</H1>
+        <Helmet
+          title="Contacting Antonio Rodriguez"
+          meta={[
+            {
+              name: "description",
+              content:
+                "Don't be shy! I'm open to mentoring, code reviews, projects or just casual conversation."
+            }
+          ]}
+        />
+        <H1>Contact Me</H1>
 
         <P>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit
-          amet leo id ligula commodo efficitur ac quis nunc. Nullam auctor, diam
-          eu suscipit consequat, lorem nibh maximus orci, non venenatis ex massa
-          sed neque. Nulla laoreet orci ac ante vehicula commodo. Integer
-          suscipit justo quis convallis euismod.
+          Write me at{" "}
+          <a
+            href="mailto:antoniwan+arodus@gmail.com?subject=Hey, Antonio!"
+            title="Email Antonio Rodriguez"
+          >
+            antoniwan@gmail.com
+          </a>{" "}
+          or check out my social media links below. I'm fairly active in{" "}
+          <a
+            href="https://twitter.com/antoniwan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
+          </a>
+          ! After you follow me, check out some sweet{" "}
+          <a
+            href="https://open.spotify.com/user/antoniwan/playlist/18Fchy5u9YkOvUqtAKqMj1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            classical
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://open.spotify.com/user/antoniwan/playlist/7gqDk94DAF0O5ifBuKAlVH"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            salsa
+          </a>{" "}
+          playlists I created for you. Cheers!
         </P>
-
-        <P>
-          Praesent semper ac urna quis pellentesque. Orci varius natoque
-          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </P>
-
-        <P>
-          In blandit risus sed nibh auctor, a vulputate eros iaculis. Nunc a
-          rhoncus elit, ut tincidunt tortor. Fusce ac placerat magna, vel mollis
-          lorem.
-        </P>
-
-        <P>Suspendisse potenti.</P>
-
-        <ul id="site-nav">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/tools">Tools</Link>
-          </li>
-          <li>
-            <Link to="/contact-me">Contact</Link>
-          </li>
-        </ul>
+        <Social />
       </div>
     </StyledMain>
   );

@@ -1,9 +1,14 @@
 import React from "react";
-import { Link } from "@reach/router";
 import posed from "react-pose";
 import styled from "react-emotion";
 import { svgBG } from "../utils/misc";
+import Toolbox from "../components/Toolbox";
+import Navigation from "../components/Navigation";
 
+const PosedToolbox = posed.div({
+  enter: { x: 0, opacity: 1 },
+  exit: { x: 50, opacity: 0 }
+});
 const PosedMain = posed.div({
   enter: { staggerChildren: 50 },
   exit: { staggerChildren: 50 }
@@ -18,7 +23,6 @@ const PosedExtraBlock = posed.div({
   },
   exit: { x: "-100%" }
 });
-const P = posed.p(textAnimationProps);
 const H1 = posed.h1(textAnimationProps);
 
 const StyledMain = styled(PosedMain)`
@@ -26,7 +30,6 @@ const StyledMain = styled(PosedMain)`
   flex-direction: column;
 
   @media(min-width: 850px) {
-    height: 100vh;
     flex-direction: row;
   }
 
@@ -38,7 +41,6 @@ const StyledMain = styled(PosedMain)`
     align-items: flex-start;
     order: 1;
     padding: 2rem;
-    max-width: 500px;
 
     @media(min-width: 850px) {
       padding: 4rem;
@@ -77,43 +79,15 @@ const StyledMain = styled(PosedMain)`
 const Tools = () => {
   return (
     <StyledMain>
+      <Navigation />
       <PosedExtraBlock className="imagery" />
 
       <div className="content">
-        <H1>Lorem!</H1>
+        <H1>Tools</H1>
 
-        <P>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit
-          amet leo id ligula commodo efficitur ac quis nunc. Nullam auctor, diam
-          eu suscipit consequat, lorem nibh maximus orci, non venenatis ex massa
-          sed neque. Nulla laoreet orci ac ante vehicula commodo. Integer
-          suscipit justo quis convallis euismod.
-        </P>
-
-        <P>
-          Praesent semper ac urna quis pellentesque. Orci varius natoque
-          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </P>
-
-        <P>
-          In blandit risus sed nibh auctor, a vulputate eros iaculis. Nunc a
-          rhoncus elit, ut tincidunt tortor. Fusce ac placerat magna, vel mollis
-          lorem.
-        </P>
-
-        <P>Suspendisse potenti.</P>
-
-        <ul id="site-nav">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/tools">Tools</Link>
-          </li>
-          <li>
-            <Link to="/contact-me">Contact</Link>
-          </li>
-        </ul>
+        <PosedToolbox>
+          <Toolbox />
+        </PosedToolbox>
       </div>
     </StyledMain>
   );
