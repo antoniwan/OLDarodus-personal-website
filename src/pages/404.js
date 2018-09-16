@@ -101,6 +101,7 @@ const StyledMain = styled(PosedMain)`
 
 `;
 
+const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 class NotFound extends Component {
   constructor() {
     super();
@@ -120,7 +121,7 @@ class NotFound extends Component {
 
   getRandomGiphy(tags = "fail") {
     // prettier-ignore
-    const giphyRequest = `https://api.giphy.com/v1/gifs/random?api_key=${process.env.GIPHY_API_KEY}&tag=${tags}&rating=R`;
+    const giphyRequest = `https://api.giphy.com/v1/gifs/random?api_key=${GIPHY_API_KEY}&tag=${tags}&rating=R`;
 
     axios
       .get(giphyRequest)
