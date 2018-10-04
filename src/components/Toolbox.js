@@ -71,14 +71,6 @@ const Controls = props => {
     <StyledControls {...props}>
       <button
         onClick={props.setStatus}
-        className={props.currentFilter === "all" ? "is-active" : ""}
-        data-filter="all"
-        data-description="Now, this is a huge, useless list! 😂"
-      >
-        All
-      </button>
-      <button
-        onClick={props.setStatus}
         className={
           props.currentFilter === currentFilterInformation.name
             ? "is-active"
