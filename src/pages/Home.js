@@ -18,7 +18,7 @@ const textAnimationProps = {
 const imageAnimationProps = {
   draggable: true,
   enter: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 1.5 }
+  exit: { opacity: 0, scale: 1.2 }
 };
 const P = posed.p(textAnimationProps);
 const H1 = posed.h1(textAnimationProps);
