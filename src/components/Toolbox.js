@@ -46,8 +46,12 @@ const StyledSkillItem = styled("div")`
     margin: 0;
   }
   h5 {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     margin-bottom: 0.2rem;
+  }
+  p {
+    font-size: 0.8rem;
+    line-height: 1rem;
   }
   padding: 1rem;
   border: none;
@@ -60,72 +64,93 @@ const StyledSkillItems = styled("div")`
   flex-wrap: wrap;
 `;
 
-const currentFilterInformation = {
-  name: `current`,
-  description: `I'm listing tools that greatly affect my daily workflow and projects
-  in production, ordered alphabetically.`
+const ControlButton = ({
+  setStatus,
+  currentFilter,
+  filterId,
+  filterName,
+  filterDescription,
+  children
+}) => {
+  return (
+    <button
+      onClick={setStatus}
+      className={currentFilter === filterId ? "is-active" : ""}
+      data-filter={filterId}
+      data-description={filterDescription}
+    >
+      {children}
+    </button>
+  );
 };
 
-const Controls = props => {
+const Controls = ({ setStatus, currentFilter }) => {
   return (
-    <StyledControls {...props}>
-      <button
-        onClick={props.setStatus}
-        className={
-          props.currentFilter === currentFilterInformation.name
-            ? "is-active"
-            : ""
-        }
-        data-filter={currentFilterInformation.name}
-        data-description={currentFilterInformation.description}
+    <StyledControls setStatus={setStatus} currentFilter={currentFilter}>
+      <ControlButton
+        filterId="current"
+        filterName={initialFilterInformation.name}
+        filterDescription={initialFilterInformation.description}
+        setStatus={setStatus}
+        currentFilter={currentFilter}
       >
         Currently using
-      </button>
-      <button
-        onClick={props.setStatus}
-        className={props.currentFilter === "learning" ? "is-active" : ""}
-        data-filter="learning"
-        data-description="I'm currently focused on learning and mastering these."
+      </ControlButton>
+
+      <ControlButton
+        filterId="learning"
+        filterName="Learning"
+        filterDescription="I'm currently focused on learning and mastering these."
+        setStatus={setStatus}
+        currentFilter={currentFilter}
       >
         Learning
-      </button>
-      <button
-        onClick={props.setStatus}
-        className={props.currentFilter === "hobby" ? "is-active" : ""}
-        data-filter="hobby"
-        data-description="I use these for personal, freelance and fun projects and prototypes!"
+      </ControlButton>
+
+      <ControlButton
+        filterId="hobby"
+        filterName="Hobbyist"
+        filterDescription="I use these for personal/fun projects and prototypes!"
+        setStatus={setStatus}
+        currentFilter={currentFilter}
       >
         Hobbyist
-      </button>
-      <button
-        onClick={props.setStatus}
-        className={props.currentFilter === "old" ? "is-active" : ""}
-        data-filter="old"
-        data-description={`"Remember that the most valuable antiques are dear old friends."`}
+      </ControlButton>
+
+      <ControlButton
+        filterId="old"
+        filterName="Legacy"
+        filterDescription={`"Remember that the most valuable antiques are dear old friends."`}
+        setStatus={setStatus}
+        currentFilter={currentFilter}
       >
         Legacy
-      </button>
+      </ControlButton>
     </StyledControls>
   );
 };
 
-const SkillItem = props => {
+const SkillItem = ({ title, desc }) => {
   return (
     <StyledSkillItem className="skill-item">
-      <h5>{props.title}</h5>
+      <h5>{title}</h5>
       <p>
-        <small>{props.desc}</small>
+        <small>{desc}</small>
       </p>
     </StyledSkillItem>
   );
 };
 
+const initialFilterInformation = {
+  name: `current`,
+  description: `These tools (ordered alphabetically) greatly affect my daily workflow.`
+};
 class Toolbox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: currentFilterInformation.name,
-      description: currentFilterInformation.description
+      filter: initialFilterInformation.name,
+      description: initialFilterInformation.description
     };
     this.setStatus = this.setStatus.bind(this);
   }

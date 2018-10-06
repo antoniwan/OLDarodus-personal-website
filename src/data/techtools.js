@@ -8,7 +8,7 @@ export default {
     {
       title: "Node.js",
       desc:
-        "JavaScript server-side runtime for client-side and back-end applications",
+        "Javascript server-side runtime for client-side and back-end applications",
       prod: true,
       hobby: true,
       actual: true,
@@ -33,12 +33,12 @@ export default {
     },
     {
       title: "Grunt",
-      desc: "JavaScript Task Runner",
+      desc: "Javascript Task Runner",
       prod: true
     },
     {
       title: "Webpack",
-      desc: "javaScript Module bundler",
+      desc: "javascript Module bundler",
       prod: true,
       hobby: true,
       actual: true,
@@ -46,22 +46,22 @@ export default {
     },
     {
       title: "TypeScript",
-      desc: "typed superset of JavaScript",
+      desc: "typed superset of Javascript",
       prod: true
     },
     {
       title: "Angular.js",
-      desc: "front-end JavaScript library",
+      desc: "front-end Javascript library",
       prod: true
     },
     {
       title: "Angular",
-      desc: "monolithic JavaScript framework",
+      desc: "monolithic Javascript framework",
       prod: true
     },
     {
       title: "React",
-      desc: "javaScript library for building user interfaces",
+      desc: "Javascript library for building user interfaces",
       prod: true,
       hobby: true,
       actual: true,
@@ -124,7 +124,7 @@ export default {
     },
     {
       title: "React Native",
-      desc: "build native mobile apps using JavaScript and React",
+      desc: "build native mobile apps using Javascript and React",
       hobby: true,
       actual: true,
       learning: true
@@ -161,7 +161,7 @@ export default {
     },
     {
       title: "CoffeeScript",
-      desc: "javaScript subset language",
+      desc: "Javascript subset language",
       prod: true
     },
     {
@@ -207,7 +207,7 @@ export default {
     },
     {
       title: "Redux",
-      desc: "state container for JavaScript apps",
+      desc: "state container for Javascript apps",
       learning: true,
       prod: true
     },
@@ -237,14 +237,14 @@ export default {
     },
     {
       title: "ES6",
-      desc: "javaScript language update",
+      desc: "javascript language update",
       prod: true,
       actual: true
     },
     {
       title: "ES7",
-      desc: "javaScript language update",
-      prod: true,
+      desc: "javascript language update",
+      prod: false,
       hobby: true,
       actual: true,
       learning: true
@@ -252,11 +252,12 @@ export default {
     {
       title: "Sublime Text 2/3",
       desc: "text editor",
-      prod: true,
-      hobby: true
+      prod: false,
+      hobby: false,
+      legacy: true
     },
     {
-      title: "JavaScript",
+      title: "Javascript",
       desc: "glorious programming language",
       prod: true,
       hobby: true,
@@ -287,7 +288,8 @@ export default {
       desc: "command-line shell",
       prod: true,
       hobby: true,
-      actual: false
+      actual: false,
+      legacy: true
     },
     {
       title: "Zsh",
@@ -298,8 +300,9 @@ export default {
     },
     {
       title: "jQuery",
-      desc: "JavaScript library",
-      prod: true
+      desc: "Javascript library",
+      prod: false,
+      legacy: true
     },
     {
       title: "WordPress",
@@ -380,14 +383,15 @@ export default {
     },
     {
       title: "Jest",
-      desc: "JavaScript testing solution",
+      desc: "Javascript testing solution",
       actual: true,
       learning: true
     },
     {
       title: "Yeoman",
       desc: "Scaffolding tool",
-      actual: false
+      actual: false,
+      legacy: true
     },
     {
       title: "Netlify",
@@ -398,7 +402,7 @@ export default {
     },
     {
       title: "Babel",
-      desc: "JavaScript compiler",
+      desc: "Javascript compiler",
       actual: true,
       prod: true
     },
@@ -414,6 +418,12 @@ export default {
       actual: true
     },
     {
+      title: "Sentry",
+      desc: "monitoring and alerting service",
+      prod: true,
+      actual: true
+    },
+    {
       title: "Lodash",
       desc: "JavaScript utility library",
       prod: true,
@@ -422,19 +432,19 @@ export default {
     {
       title: "Tensorflow",
       desc: "open-source machine learning framework",
-      prod: true,
+      prod: false,
       learning: true,
-      actual: false
+      actual: true
     },
     {
       title: "Amazon Web Services",
-      desc: "services platform, using Lambdas and S3",
+      desc: "hosting services platform, using Lambdas and S3",
       prod: true,
       actual: true
     },
     {
       title: "ESLint",
-      desc: "linting utility for JavaScript and JSX",
+      desc: "linting utility for Javascript and JSX",
       prod: true,
       hobby: true,
       actual: true
@@ -443,6 +453,18 @@ export default {
       title: "CodeIgniter",
       desc: "PHP framework",
       prod: true
+    },
+    {
+      title: "Vagrant",
+      desc: "development environment virtualization",
+      prod: true,
+      actual: true
+    },
+    {
+      title: "Azure Hosting Services",
+      desc: "hosting services",
+      prod: true,
+      actual: true
     }
   ]
 };

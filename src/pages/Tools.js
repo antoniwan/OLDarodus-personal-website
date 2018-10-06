@@ -69,14 +69,6 @@ const StyledMain = styled(PosedMain)`
       flex: 0.2;
     }
   }
-
-  img {
-    max-width: 500px;
-    max-height: 500px;
-    margin: 0;
-    padding: 0;
-  }
-
 `;
 
 const Tools = () => {
