@@ -41,6 +41,15 @@ const StyledSkillItem = styled("div")`
       color: var(--color-white);
     }
   }
+  @media (hover: none) {
+    &:hover {
+      color: black;
+      background: transparent;
+      p {
+        color: black;
+      }
+    }
+  }
   h5,
   p {
     margin: 0;

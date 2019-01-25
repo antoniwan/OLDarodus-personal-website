@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 import posed from "react-pose";
 import styled from "react-emotion";
 import Helmet from "react-helmet";
-import image5 from "../assets/images/m8headshot.jpg";
+import profilepicture from "../assets/images/me.jpg";
 import { svgBG } from "../utils/misc";
 
 const PosedMain = posed.div({
@@ -16,7 +16,6 @@ const textAnimationProps = {
   exit: { x: 50, opacity: 0 }
 };
 const imageAnimationProps = {
-  draggable: true,
   enter: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 1.2 }
 };
@@ -89,7 +88,7 @@ const Home = () => {
   return (
     <StyledMain>
       <div className="imagery">
-        <IMG src={image5} alt="Text 5" />
+        <IMG src={profilepicture} alt="Antonio Rodriguez" />
       </div>
 
       <div className="content">

@@ -71,6 +71,33 @@ const StyledMain = styled(PosedMain)`
   }
 `;
 
+const StyledButton = styled("button")`
+  text-align: right;
+  float: right;
+  font-size: 0.7rem;
+  padding: 0.2rem;
+  margin-top: 2rem;
+  bottom: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-weight: bold;
+  color: var(--color-link);
+  cursor: pointer;
+`;
+
+class BackToTop extends React.Component {
+  handleClick() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <StyledButton onClick={this.handleClick}>Back to the Top</StyledButton>
+    );
+  }
+}
+
 const Tools = () => {
   return (
     <React.Fragment>
@@ -94,6 +121,8 @@ const Tools = () => {
           <PosedToolbox>
             <Toolbox />
           </PosedToolbox>
+
+          <BackToTop />
         </div>
       </StyledMain>
     </React.Fragment>

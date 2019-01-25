@@ -7,6 +7,7 @@ const StyledMenu = styled("nav")`
   top: 0;
   left: 0;
   width: 100vw;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -41,7 +42,7 @@ const Navigation = () => (
       Home
     </Link>
     <Link to="/tools" getProps={isActive}>
-      I Work With
+      I Use
     </Link>
     <Link to="/contact-me" getProps={isActive}>
       Contact Me
