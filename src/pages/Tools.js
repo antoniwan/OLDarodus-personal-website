@@ -62,6 +62,7 @@ const StyledMain = styled(PosedMain)`
     background-image: url("${svgBG}");
     border-right: 0.1px solid #eee;
     overflow: hidden;
+    min-height: 100vh;
 
     @media(min-width: 850px) {
       display: flex;

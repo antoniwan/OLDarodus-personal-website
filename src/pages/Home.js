@@ -77,6 +77,8 @@ const StyledMain = styled(PosedMain)`
     padding: 50px 0;
     border-radius: 5px;
     margin: 5px;
+    object-fit: contain;
+    border: 1px solid white;
   }
 
 `;
@@ -102,7 +104,7 @@ const Home = () => {
             }
           ]}
         />
-        <H1>Software Engineer. Manager. Husband. Father.</H1>
+        <H1>Software Engineer. Cofounder. Manager. Husband. Father.</H1>
 
         <P>
           My name is Antonio Rodríguez and I lead software development for a{" "}
