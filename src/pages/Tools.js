@@ -62,12 +62,12 @@ const StyledMain = styled(PosedMain)`
     background-image: url("${svgBG}");
     border-right: 0.1px solid #eee;
     overflow: hidden;
-    min-height: 100vh;
 
     @media(min-width: 850px) {
       display: flex;
       order: 1;
       flex: 0.2;
+      min-height: 100vh;
     }
   }
 `;
